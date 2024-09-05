@@ -2,15 +2,14 @@ import { IoMdAlert } from "react-icons/io";
 
 function Aviso() {
     return (
-        <div className="py-1 md:py-2 px-4 border-b-2 border-green-500 md:pl-24 bg-black/70">
-            <div className="flex items-center space-x-2">
+        <div className="bg-black/70 border-b-2 border-green-500 md:py-3 py-1 shadow-md">
+            <div className="container mx-auto px-4 flex gap-1">
                 <IoMdAlert 
                     className="text-green-500" 
-                    size={47} // Tamanho para versão mobile
-                    style={{ fontSize: '1.75rem' }} // Estilo inline para garantir tamanho responsivo
+                    size={25} // Tamanho padrão, mas ajustável conforme necessário
                     aria-label="Ícone de alerta"
                 />
-                <p className="text-white">
+                <p className="text-white text-sm md:text-base lg:text-lg">
                     <span className="font-semibold">IMPORTANTE:</span> Nunca solicitamos depósitos antecipados. Prestamos serviço GRATUITO.
                 </p>
             </div>
