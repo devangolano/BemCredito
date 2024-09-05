@@ -86,7 +86,7 @@ const Navbar = () => {
                 <div className="lg:hidden mt-4 space-y-3 text-lg flex flex-col justify-center px-4">
                         <DropdownMenu.Root>
                             <DropdownMenu.Trigger asChild>
-                                <button className=" flex items-center gap-x-2 hover:text-green-500 focus:outline-none">
+                                <button className=" flex items-center justify-between gap-x-2 hover:text-green-500 focus:outline-none">
                                     Empréstimos
                                     <span><GoTriangleDown size={20} /></span>
                                 </button>
