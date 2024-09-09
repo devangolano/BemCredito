@@ -26,7 +26,7 @@ const Testimonials = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Muda a cada 5 segundos
+    }, 4000); // Muda a cada 5 segundos
 
     return () => clearInterval(interval); // Limpeza do intervalo ao desmontar o componente
   }, [testimonials.length]);
