@@ -7,6 +7,7 @@ import StepDesk from './components/StepDesk'
 import Quiz from './components/Quiz'
 import Testimonials from './components/Testimonials'
 import FaqComponent from './components/FaqComponent'
+import BlogSection from './components/BlogSection'
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
       <Quiz />
       <Testimonials />
       <FaqComponent  />
-
+      <BlogSection />
 
       <div className="flex md:hidden bg-white flex-col mt-80 pt-12 md:flex-row items-center md:items-start md:left-28 absolute">
      

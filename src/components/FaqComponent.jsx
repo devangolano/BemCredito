@@ -121,7 +121,7 @@ const FaqComponent = () => {
             <div className="mt-8 text-center">
                 <a
                     href="#"
-                    className="inline-block px-6 py-2 mb-10 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition"
+                    className="inline-block px-6 py-2 mb-10 bg-white text-gray-500 font-semibold border-2 border-green-500 rounded-full hover:bg-green-500 hover:text-white  transition"
                 >
                     Acesse nossa Central de Ajuda!
                 </a>
