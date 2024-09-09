@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GoArrowDown } from "react-icons/go";
 
 const FaqComponent = () => {
     const faqItems = [
@@ -35,7 +36,7 @@ const FaqComponent = () => {
                         >
                             {item}
                             <span className={`transform ${expandedIndex === index ? 'rotate-180' : 'rotate-0'} transition-transform duration-200`}>
-                                ⌄
+                               <GoArrowDown />
                             </span>
                         </button>
                         {expandedIndex === index && (
