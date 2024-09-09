@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import InputMask from 'react-input-mask'; // Certifique-se de que está importado
+import InputMask from 'react-input-mask';
+import emailjs from 'emailjs-com'; // Importar o EmailJS
 
 const Header = () => {
   const [step, setStep] = useState(1);
@@ -38,6 +39,26 @@ const Header = () => {
 
   const formatCurrency = (value) => {
     return parseFloat(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+      name: formData.name,
+      email: formData.email,
+      cef: formData.cef,
+      whatsapp: formData.whatsapp,
+      amount: formatCurrency(amount),
+      months: months,
+    }, 'YOUR_USER_ID')
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      alert('E-mail enviado com sucesso!');
+    }, (err) => {
+      console.log('FAILED...', err);
+      alert('Falha ao enviar e-mail.');
+    });
   };
 
   return (
@@ -161,7 +182,7 @@ const Header = () => {
               placeholder="+55 11 964872716"
               className="border p-2 rounded-md w-full mb-2"
             />
-            <div className="flex  justify-between">
+            <div className="flex justify-between">
               <button
                 className="mt-4 bg-red-200 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-gray-500 transition duration-200"
                 onClick={handleBack}
@@ -170,6 +191,7 @@ const Header = () => {
               </button>
               <button
                 className="mt-4 bg-green-500 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200"
+                onClick={sendEmail} // Chama a função para enviar o e-mail
               >
                 Enviar →
               </button>
