@@ -29,7 +29,7 @@ function App() {
             <p>O empréstimo pessoal do Bem Pra Crédito é uma solução segura para pessoas físicas obterem crédito de forma rápida. Nele, não há necessidade de ofertar algum bem como garantia, nem o motivo para solicitar o dinheiro emprestado.</p>
             <p className='mt-5 '>Assim, você pode realizar o empréstimo para qualquer finalidade, seja para pagar dívidas, reformar sua casa, viajar, abrir um negócio ou investir em estudos.</p>
             <button className="w-36  mt-8 absolute bg-green-500 font-mono text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200">
-              Simular →
+             <a href="#"> Simular →</a>
             </button>
           </div>
         </div>
@@ -45,7 +45,7 @@ function App() {
             <p>O empréstimo pessoal do Bem Pra Crédito é uma solução segura para pessoas físicas obterem crédito de forma rápida. Nele, não há necessidade de ofertar algum bem como garantia, nem o motivo para solicitar o dinheiro emprestado.</p>
             <p className='mt-5 '>Assim, você pode realizar o empréstimo para qualquer finalidade, seja para pagar dívidas, reformar sua casa, viajar, abrir um negócio ou investir em estudos.</p>
             <button className="w-36 mt-6 absolute bg-green-500 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200">
-              Simular →
+              <a href="#">Simular →</a>
             </button>
           </div>
           <div className='mt-28 md:w-1/2'>
