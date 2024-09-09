@@ -8,11 +8,12 @@ import Quiz from './components/Quiz'
 import Testimonials from './components/Testimonials'
 import FaqComponent from './components/FaqComponent'
 import BlogSection from './components/BlogSection'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
-    <>
+    <div>
       <Navbar />
       <Aviso />
       <Header />
@@ -38,9 +39,7 @@ function App() {
       <FaqComponent  />
       <BlogSection />
 
-      <div className="flex md:hidden bg-white flex-col mt-80 pt-12 md:flex-row items-center md:items-start md:left-28 absolute">
-     
-        
+      <div className="flex md:hidden bg-white flex-col mt-80 pt-12 md:flex-row items-center md:items-start md:left-28 absolute">     
         <div className='md:w-1/2 p-4'>
           <h2 className='mb-10 text-3xl font-bold'>O que é empréstimo pessoal Bom Pra Crédito?</h2>
           <p>O empréstimo pessoal do Bom Pra Crédito é uma solução segura para pessoas físicas obterem crédito de forma rápida. Nele, não há necessidade de ofertar algum bem como garantia, nem o motivo para solicitar o dinheiro emprestado.</p>
@@ -55,7 +54,11 @@ function App() {
       <CreditSteps />
       </div>
       </section>
-    </>
+      <img className='absolute mt-[3870px] hidden md:block' src="./Footer.png" alt="Footer" srcset="" />
+      <img className='absolute mt-[6400px] md:hidden' src="./Footer-mob.jpg" alt="Footer" srcset="" />
+      <img className='absolute mt-[7000px] md:hidden' src="./Footer-mob2.jpg" alt="Footer" srcset="" />
+
+    </div>
   )
 }
 
