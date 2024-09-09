@@ -168,7 +168,7 @@ const Header = () => {
               <button
                 className="mt-4 bg-green-500 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200"
               >
-                Enviar
+                Enviar →
               </button>
             </div>
           </div>
