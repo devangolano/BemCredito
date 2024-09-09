@@ -54,10 +54,7 @@ function App() {
       <CreditSteps />
       </div>
       </section>
-      <img className='absolute mt-[3870px] hidden md:block' src="./Footer.png" alt="Footer" srcset="" />
-      <img className='absolute mt-[6310px] md:hidden' src="./Footer-mob.jpg" alt="Footer" srcset="" />
-      <img className='absolute mt-[6970px] md:hidden' src="./Footer-mob2.jpg" alt="Footer" srcset="" />
-
+      <Footer />
     </div>
   )
 }
