@@ -120,7 +120,8 @@ const FaqComponent = () => {
             </div>
             <div className="mt-8 text-center">
                 <a
-                    href="#"
+                    href="https://wa.me/5511964872716?text=Prezados,%0A%0AGostaria%20de%20solicitar%20informações%20sobre%20as%20opções%20de%20empréstimo%20pessoal%20oferecidas%20pela%20*BEM%20PRA%20CRÉDITO*%20para%20clientes%20com%20restrições%20de%20crédito.%20Agradeço%20antecipadamente%20pela%20atenção%20e%20aguardo%20suas%20orientações%20sobre%20os%20procedimentos%20necessários."
+                    target="_blank" 
                     className="inline-block px-6 py-2 mb-10 bg-white text-gray-500 font-semibold border-2 border-green-500 rounded-full hover:bg-green-500 hover:text-white  transition"
                 >
                     Acesse nossa Central de Ajuda!
