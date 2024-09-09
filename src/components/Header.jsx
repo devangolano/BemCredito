@@ -40,7 +40,7 @@ const Header = () => {
             <span>500</span>
             <span>100.000</span>
           </div>
-          <button className="w-36 right-6 mt-4 absolute bg-green-500 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200">
+          <button className="w-[150px] right-6 mt-4 absolute bg-green-500 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200">
             Continuar →
           </button>
         </div>
