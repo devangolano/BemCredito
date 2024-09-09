@@ -5,6 +5,7 @@ import Header from './components/Header'
 import CreditSteps from './components/CreditSteps'
 import StepDesk from './components/StepDesk'
 import Quiz from './components/Quiz'
+import Testimonials from './components/Testimonials'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
       </div>
       <StepDesk />
       <Quiz />
+      <Testimonials />
 
 
       <div className="flex md:hidden bg-white flex-col mt-80 pt-12 md:flex-row items-center md:items-start md:left-28 absolute">
