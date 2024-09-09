@@ -55,7 +55,7 @@ const Footer = () => {
             atuante como correspondente bancário, nos termos da Resolução CMN nº
             4.935 de 2021 (“Correspondente no país”), cadastrado em diversas
             instituições financeiras que poderão ser confirmadas e consultadas
-            através dos canais de Atendimento (WhatsApp: +55 11 98925-5012 e
+            através dos canais de Atendimento (WhatsApp: +55 11 964872716 e
             Email:atendimento@bempracredito.com.br).
           </p>
           <p className="text-start font-bold mt-2 leading-relaxed">
