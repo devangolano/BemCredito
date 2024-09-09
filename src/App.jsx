@@ -39,7 +39,7 @@ function App() {
         <FaqComponent />
         <BlogSection />
 
-        <div className="flex md:hidden bg-white flex-col mt-80 pt-12 md:flex-row items-center md:items-start md:left-28 absolute">     
+        <div className="flex md:hidden -z-10 bg-white flex-col mt-80 pt-12 md:flex-row items-center md:items-start md:left-28 absolute">     
           <div className='md:w-1/2 p-4'>
             <h2 className='mb-10 text-3xl font-bold'>O que é empréstimo pessoal Bem Pra Crédito?</h2>
             <p>O empréstimo pessoal do Bem Pra Crédito é uma solução segura para pessoas físicas obterem crédito de forma rápida. Nele, não há necessidade de ofertar algum bem como garantia, nem o motivo para solicitar o dinheiro emprestado.</p>
