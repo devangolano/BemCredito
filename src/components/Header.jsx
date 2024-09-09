@@ -12,6 +12,7 @@ const Header = () => {
     cef: "",
     whatsapp: "",
   });
+  const [showModal, setShowModal] = useState(false); // Estado para o modal
 
   // Função para manipular a mudança de valor do range
   const handleRangeChange = (e) => {
@@ -58,14 +59,14 @@ const Header = () => {
       amount: formatCurrency(amount),
       months: months,
     };
-    
 
     console.log('Dados para envio:', emailData);
 
     emailjs.send('service_2qa82ug', 'template_onfd75h', emailData, 'UKJvspDyUFMD4NwqU')
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
-      alert('E-mail enviado com sucesso!');
+      setFormData({ name: "", email: "", cef: "", whatsapp: "" }); // Limpa os dados do formulário
+      setShowModal(true); // Exibe o modal
     })
     .catch((err) => {
       console.error('FAILED...', err);
@@ -214,6 +215,23 @@ const Header = () => {
           </div>
         )}
       </div>
+
+      {/* Modal de Agradecimento */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+          <div className="bg-white p-6 rounded-md shadow-lg">
+            <h2 className="text-lg font-semibold text-gray-800 mb-4">Obrigado!</h2>
+            <p className="text-gray-700 mb-4">Seu pedido foi enviado com sucesso.</p>
+            <p className="text-gray-700 mb-4">Entraremos em contacto em breve.</p>
+            <button
+              className="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600"
+              onClick={() => setShowModal(false)}
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
