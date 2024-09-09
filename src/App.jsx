@@ -14,7 +14,7 @@ function App() {
       <section className='mt-[-330px] mb-36'>
       <img src="/hero-bg-mob.webp" className="-z-10 absolute bottom-[-170px] w-screen md:hidden" alt="imagem de mulher sorrindo" srcset="" />
      
-      <div className="flex bg-slate-100 flex-col mt-96 md:flex-row items-center md:items-start md:left-28 absolute">
+      <div className="flex bg-slate-100 flex-col pt-96 -z-10 md:flex-row items-center md:items-start md:left-28 absolute">
         <div className='hidden md:block md:w-1/2'>
           <img src='/image-section-desk.webp' className='' alt='imagem da mulher sorrindo' />
         </div>
