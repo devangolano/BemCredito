@@ -161,7 +161,7 @@ const Header = () => {
               placeholder="+55 11 964872716"
               className="border p-2 rounded-md w-full mb-2"
             />
-            <div className="flex justify-between">
+            <div className="flex  justify-between">
               <button
                 className="mt-4 bg-red-200 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-gray-500 transition duration-200"
                 onClick={handleBack}

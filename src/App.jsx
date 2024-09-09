@@ -48,7 +48,7 @@ function App() {
             Simular →
           </button>
         </div>
-        <div className='mt-24 md:w-1/2'>
+        <div className='mt-28 md:w-1/2'>
           <img src='/image-section-desk.webp' className='' alt='imagem da mulher sorrindo' />
         </div>
       <CreditSteps />
