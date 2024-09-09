@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import InputMask from 'react-input-mask';
-import emailjs from '@emailjs/browser'; // Importa o EmailJS
 
 const Header = () => {
   const [step, setStep] = useState(1);
@@ -48,9 +47,9 @@ const Header = () => {
   };
 
   // Função para enviar o e-mail usando EmailJS
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-
+  
     const emailData = {
       name: formData.name,
       email: formData.email,
@@ -59,20 +58,30 @@ const Header = () => {
       amount: formatCurrency(amount),
       months: months,
     };
-
-    console.log('Dados para envio:', emailData);
-
-    emailjs.send('service_43xa6eb', 'template_t9gaums', emailData, 'EljxBu8bRIpVsQWQx')
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-      setFormData({ name: "", email: "", cef: "", whatsapp: "" }); // Limpa os dados do formulário
-      setShowModal(true); // Exibe o modal
-    })
-    .catch((err) => {
-      console.error('FAILED...', err);
-      alert('Falha ao enviar seus dados.');
-    });
+  
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      });
+  
+      if (response.ok) {
+        console.log('Email enviado com sucesso!');
+        setFormData({ name: "", email: "", cef: "", whatsapp: "" }); // Limpa os dados do formulário
+        setShowModal(true); // Exibe o modal
+      } else {
+        console.error('Falha ao enviar o email.');
+        alert('Falha ao enviar seus dados.');
+      }
+    } catch (error) {
+      console.error('Erro:', error);
+      alert('Erro ao enviar seus dados.');
+    }
   };
+  
 
   return (
     <div className="relative h-screen flex flex-col items-center justify-start bg-cover bg-center md:bg-[url('hero-bg-desk.png')] sm:bg-none">
