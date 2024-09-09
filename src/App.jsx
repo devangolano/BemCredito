@@ -56,7 +56,7 @@ function App() {
       </section>
       <img className='absolute mt-[3870px] hidden md:block' src="./Footer.png" alt="Footer" srcset="" />
       <img className='absolute mt-[6310px] md:hidden' src="./Footer-mob.jpg" alt="Footer" srcset="" />
-      <img className='absolute mt-[7000px] md:hidden' src="./Footer-mob2.jpg" alt="Footer" srcset="" />
+      <img className='absolute mt-[6800px] md:hidden' src="./Footer-mob2.jpg" alt="Footer" srcset="" />
 
     </div>
   )
