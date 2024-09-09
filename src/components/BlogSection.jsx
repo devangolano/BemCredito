@@ -28,7 +28,7 @@ const BlogSection = () => {
     <section className="px-4 md:px-24 absolute z-6 md:mt-[3270px] mt-[4560px] w-full py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-4">
-          Quer saber mais sobre o empréstimo pessoal Bom Pra Crédito?
+          Quer saber mais sobre o empréstimo pessoal Bem Pra Crédito?
         </h2>
         <p className="text-lg text-gray-600 mb-12">
           Em nosso blog, explicamos com mais detalhes como ele funciona, trazemos

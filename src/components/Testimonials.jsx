@@ -8,12 +8,12 @@ const Testimonials = () => {
       location: "Sorriso/MT",
     },
     {
-      text: "Bom Pra Crédito tem feito jus ao seu nome. Na hora que não sabia mais o que fazer para resolver as questões imprevistas, o Bom Pra Crédito aparece com a solução de forma online e segura.",
+      text: "Bem Pra Crédito tem feito jus ao seu nome. Na hora que não sabia mais o que fazer para resolver as questões imprevistas, o Bem Pra Crédito aparece com a solução de forma online e segura.",
       author: "Maria Mendes",
       location: "São Paulo/SP",
     },
     {
-      text: "O empréstimo veio na hora certa para eu poder controlar minha situação financeira. Gostei do Bom Pra Crédito porque o atendimento é rápido e tem pouca burocracia. Os juros também são bem acessíveis.",
+      text: "O empréstimo veio na hora certa para eu poder controlar minha situação financeira. Gostei do Bem Pra Crédito porque o atendimento é rápido e tem pouca burocracia. Os juros também são bem acessíveis.",
       author: "Roberto Dias",
       location: "Cel. Fabriciano/MG",
     }

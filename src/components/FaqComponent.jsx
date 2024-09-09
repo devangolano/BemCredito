@@ -7,7 +7,7 @@ const FaqComponent = () => {
         "como funciona o empréstimo pessoal",
         "Quem pode fazer o Empréstimo Pessoal?",
         "Qual a diferença de Empréstimo Pessoal e Financiamento?",
-        "O Bom Pra Crédito cobra pelo serviço prestado?",
+        "O Bem Pra Crédito cobra pelo serviço prestado?",
         "Tenho restrições em meu nome, posso fazer um empréstimo?",
         "Eu posso fazer um empréstimo pessoal se não tiver comprovante de renda?",
         "Quais são os documentos necessários para obter um empréstimo pessoal?",
@@ -45,7 +45,7 @@ const FaqComponent = () => {
                                 {index === 0 && (
                                     <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
                                         {/* Resposta para a primeira pergunta */}
-                                        Solicitar empréstimo pessoal online no Bom Pra Crédito é fácil! Basta preencher um cadastro, que leva só alguns minutinhos, conhecer e comparar as ofertas de crédito disponíveis e então escolher a opção de empréstimo online com as parcelas que cabem no seu bolso.
+                                        Solicitar empréstimo pessoal online no Bem Pra Crédito é fácil! Basta preencher um cadastro, que leva só alguns minutinhos, conhecer e comparar as ofertas de crédito disponíveis e então escolher a opção de empréstimo online com as parcelas que cabem no seu bolso.
                                         <br /><br />
                                         Após a análise das financeiras, se você for aprovado, é só aguardar o depósito do crédito na sua conta e usá-lo como desejar!
                                     </div>
@@ -53,7 +53,7 @@ const FaqComponent = () => {
                                 {index === 1 && (
                                     <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
                                         {/* Resposta para a primeira pergunta */}
-                                        Para fazer a solicitação é bem simples: basta você preencher um cadastro com seus dados pessoais e aguardar a avaliação de um ou mais parceiros do Bom Pra Crédito.
+                                        Para fazer a solicitação é bem simples: basta você preencher um cadastro com seus dados pessoais e aguardar a avaliação de um ou mais parceiros do Bem Pra Crédito.
 
                                         <br /><br /> Sendo aprovado(a), você poderá contratar o empréstimo e receber o valor em até 2 dias úteis na conta bancária cadastrada.
 
@@ -75,12 +75,12 @@ const FaqComponent = () => {
                                 )}
                                 {index === 4 && (
                                     <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
-                                    O Bom Pra Crédito é uma plataforma 100% gratuita. <br /> <br /> Não cobramos nada do cliente que está contratando o crédito. Somos remunerados pela instituição financeira escolhida pelo cliente com uma comissão sobre a efetivação do contrato de crédito. A prática de solicitar depósito antecipado é ILEGAL. Nunca faça depósitos antecipados para conseguir crédito!
+                                    O Bem Pra Crédito é uma plataforma 100% gratuita. <br /> <br /> Não cobramos nada do cliente que está contratando o crédito. Somos remunerados pela instituição financeira escolhida pelo cliente com uma comissão sobre a efetivação do contrato de crédito. A prática de solicitar depósito antecipado é ILEGAL. Nunca faça depósitos antecipados para conseguir crédito!
                                     </div>
                                 )}
                                 {index === 5 && (
                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
-                                  A solicitação de empréstimo poderá ser feita sim, visto que alguns parceiros do Bom Pra Crédito realizam uma análise de crédito menos restritiva, disponibilizando empréstimos para pessoas negativadas. Porém, destacamos que isso não garante a aprovação de seu empréstimo. Ela, dependerá da análise de seu perfil financeiro.
+                                  A solicitação de empréstimo poderá ser feita sim, visto que alguns parceiros do Bem Pra Crédito realizam uma análise de crédito menos restritiva, disponibilizando empréstimos para pessoas negativadas. Porém, destacamos que isso não garante a aprovação de seu empréstimo. Ela, dependerá da análise de seu perfil financeiro.
                                     </div>
                                 )}
                                 {index === 6 && (
@@ -90,7 +90,7 @@ const FaqComponent = () => {
                                 )}
                                 {index === 7 && (
                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
-                                  O Empréstimo Pessoal é uma das modalidades de crédito que necessitam de menos documentação do cliente para serem efetivadas. Aqui, no Bom Pra Crédito, os documentos para realizar a solicitação podem variar de acordo com o parceiro financeiro, mas normalmente são: documento de identidade (RG ou CNH) e comprovantes de renda e residência, preferencialmente dos últimos 90 dias.
+                                  O Empréstimo Pessoal é uma das modalidades de crédito que necessitam de menos documentação do cliente para serem efetivadas. Aqui, no Bem Pra Crédito, os documentos para realizar a solicitação podem variar de acordo com o parceiro financeiro, mas normalmente são: documento de identidade (RG ou CNH) e comprovantes de renda e residência, preferencialmente dos últimos 90 dias.
                                </div>
                                 )}
                                 {index === 8 && (
@@ -100,17 +100,17 @@ const FaqComponent = () => {
                                 )}
                                 {index === 9 && (
                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
-                                 Todas as condições da oferta de crédito são inseridas pela própria financeira. Atualmente alguns dos nossos parceiros já permitem esta escolha. Mas, nós do Bom Pra Crédito não conseguimos alterá-las, apenas repassamos aos clientes.
+                                 Todas as condições da oferta de crédito são inseridas pela própria financeira. Atualmente alguns dos nossos parceiros já permitem esta escolha. Mas, nós do Bem Pra Crédito não conseguimos alterá-las, apenas repassamos aos clientes.
                                    </div>
                                 )}
                                 {index === 10 && (
                                     <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
-                                   O empréstimo pessoal do Bom Pra Crédito é depositado em até 48 horas na conta bancária que você cadastrou.
+                                   O empréstimo pessoal do Bem Pra Crédito é depositado em até 48 horas na conta bancária que você cadastrou.
                                     </div>
                                 )}
                                 {index === 11 && (
                                     <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
-                                        O boleto bancário é a principal forma de pagamento das parcelas do empréstimo pessoal solicitado aqui no Bom Pra Crédito.
+                                        O boleto bancário é a principal forma de pagamento das parcelas do empréstimo pessoal solicitado aqui no Bem Pra Crédito.
                                 </div>
                                 )}
                             </div>

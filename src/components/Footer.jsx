@@ -67,7 +67,7 @@ const Footer = () => {
             DO BRASIL.
           </p>
           <p className="text-start mt-2 leading-relaxed">
-            As ofertas divulgadas no site e aplicativo do BOM PRA CRÉDITO são
+            As ofertas divulgadas no site e aplicativo do BEM PRA CRÉDITO são
             fornecidas pelas Instituições Financeiras e correspondem a simulações
             de crédito, cujas condições são variáveis conforme Política de
             Crédito da Instituição Financeira proponente. Nas simulações de
