@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser'; // Importa o EmailJS
 
 const Header = () => {
   const [step, setStep] = useState(1);
-  const [amount, setAmount] = useState(500);
+  const [amount, setAmount] = useState(3000);
   const [months, setMonths] = useState("");
   const [formData, setFormData] = useState({
     name: "",
