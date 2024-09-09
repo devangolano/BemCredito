@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 const FaqComponent = () => {
     const faqItems = [
-        "Como funciona o Empréstimo Pessoal?",
+        "Dúvidas frequentes sobre nosso empréstimo pessoal",
+        "como funciona o empréstimo pessoal",
         "Quem pode fazer o Empréstimo Pessoal?",
         "Qual a diferença de Empréstimo Pessoal e Financiamento?",
         "O Bom Pra Crédito cobra pelo serviço prestado?",
@@ -41,7 +42,7 @@ const FaqComponent = () => {
                             <div className="mt-2 text-gray-600">
                                 {/* Substitua o conteúdo abaixo com as respostas correspondentes */}
                                 {index === 0 && (
-                                    <div className='border-green-500 border-l-4 pl-2 text-start'>
+                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
                                         {/* Resposta para a primeira pergunta */}
                                         Solicitar empréstimo pessoal online no Bom Pra Crédito é fácil! Basta preencher um cadastro, que leva só alguns minutinhos, conhecer e comparar as ofertas de crédito disponíveis e então escolher a opção de empréstimo online com as parcelas que cabem no seu bolso.
                                         <br /><br />
@@ -49,7 +50,7 @@ const FaqComponent = () => {
                                     </div>
                                 )}
                                 {index === 1 && (
-                                    <div className='border-green-500 border-l-4 pl-2 text-start'>
+                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
                                         {/* Resposta para a primeira pergunta */}
                                         Para fazer a solicitação é bem simples: basta você preencher um cadastro com seus dados pessoais e aguardar a avaliação de um ou mais parceiros do Bom Pra Crédito.
 
@@ -61,57 +62,54 @@ const FaqComponent = () => {
                                     </div>
                                 )}
                                 {index === 2 && (
-                                     <div className='border-green-500 border-l-4 pl-2 text-start'>
-                                        {/* Resposta para a terceira pergunta */}
-                                        {/* Cole aqui o conteúdo da resposta */}
+                                     <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                       O empréstimo pessoal é um tipo de crédito destinado a pessoas físicas. Todos nós podemos solicitar um, basta termos um documento de identidade e comprovantes de renda e residência.
                                     </div>
                                 )}
                                 {index === 3 && (
-                                   <div className='border-green-500 border-l-4 pl-2 text-start'>
-                                   {/* Resposta para a terceira pergunta */}
-                                   {/* Cole aqui o conteúdo da resposta */}
+                                   <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                   No empréstimo pessoal, o crédito aprovado não tem um destino específico, ou seja, pode ser utilizado para qualquer objetivo, como: pagamento de contas, educação, quitação de outras dívidas ou mesmo para realizar uma compra ou viagem desejada.
+                                    <br /><br /> Já o financiamento, também é um contrato entre o cliente e a instituição financeira, mas neste caso existe uma destinação específica, como, por exemplo, a aquisição de veículo ou de um imóvel.
                                     </div>
                                 )}
                                 {index === 4 && (
-                                    <div className='border-green-500 border-l-4 pl-2 text-start'>
-                                    {/* Resposta para a terceira pergunta */}
-                                    {/* Cole aqui o conteúdo da resposta */}
+                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                    O Bom Pra Crédito é uma plataforma 100% gratuita. <br /> <br /> Não cobramos nada do cliente que está contratando o crédito. Somos remunerados pela instituição financeira escolhida pelo cliente com uma comissão sobre a efetivação do contrato de crédito. A prática de solicitar depósito antecipado é ILEGAL. Nunca faça depósitos antecipados para conseguir crédito!
                                     </div>
                                 )}
                                 {index === 5 && (
-                                   <div className='border-green-500 border-l-4 pl-2 text-start'>
-                                   {/* Resposta para a terceira pergunta */}
-                                   {/* Cole aqui o conteúdo da resposta */}
+                                   <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                  A solicitação de empréstimo poderá ser feita sim, visto que alguns parceiros do Bom Pra Crédito realizam uma análise de crédito menos restritiva, disponibilizando empréstimos para pessoas negativadas. Porém, destacamos que isso não garante a aprovação de seu empréstimo. Ela, dependerá da análise de seu perfil financeiro.
                                     </div>
                                 )}
                                 {index === 6 && (
-                                    <div className='border-green-500 border-l-4 pl-2 text-start'>
-                                    {/* Resposta para a terceira pergunta */}
-                                    {/* Cole aqui o conteúdo da resposta */}
+                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                   Sim. É possível conseguir um empréstimo sem comprovação de renda. Mas, nesta modalidade de crédito, o credor tem o risco de concessão ampliado, pois trabalha com uma margem de inadimplência. Assim, esse risco é direcionado para as taxas de juros. Ou seja, é possível tomar um empréstimo pessoal sem comprovação de renda, mas os juros podem ser maiores.
                                 </div>
                                 )}
                                 {index === 7 && (
-                                   <div className='border-green-500 border-l-4 pl-2 text-start'>
-                                   {/* Resposta para a terceira pergunta */}
-                                   {/* Cole aqui o conteúdo da resposta */}
+                                   <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                  O Empréstimo Pessoal é uma das modalidades de crédito que necessitam de menos documentação do cliente para serem efetivadas. Aqui, no Bom Pra Crédito, os documentos para realizar a solicitação podem variar de acordo com o parceiro financeiro, mas normalmente são: documento de identidade (RG ou CNH) e comprovantes de renda e residência, preferencialmente dos últimos 90 dias.
                                </div>
                                 )}
                                 {index === 8 && (
-                                    <div className='border-green-500 border-l-4 pl-2 text-start'>
-                                    {/* Resposta para a terceira pergunta */}
-                                    {/* Cole aqui o conteúdo da resposta */}
+                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                  Após o envio dos documentos e a assinatura do contrato a proposta do empréstimo é enviada para a análise da financeira e o prazo para retorno é de até 2 dias úteis, via SMS ou e-mail.
                                 </div>
                                 )}
                                 {index === 9 && (
-                                   <div className='border-green-500 border-l-4 pl-2 text-start'>
-                                   {/* Resposta para a terceira pergunta */}
-                                   {/* Cole aqui o conteúdo da resposta */}
-                               </div>
+                                   <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                 Todas as condições da oferta de crédito são inseridas pela própria financeira. Atualmente alguns dos nossos parceiros já permitem esta escolha. Mas, nós do Bom Pra Crédito não conseguimos alterá-las, apenas repassamos aos clientes.
+                                   </div>
                                 )}
                                 {index === 10 && (
-                                    <div className='border-green-500 border-l-4 pl-2 text-start'>
-                                    {/* Resposta para a terceira pergunta */}
-                                    {/* Cole aqui o conteúdo da resposta */}
+                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                   O empréstimo pessoal do Bom Pra Crédito é depositado em até 48 horas na conta bancária que você cadastrou.
+                                    </div>
+                                )}
+                                {index === 11 && (
+                                    <div className='border-green-500 border-l-4 pl-2 text-start bg-green-50 py-1'>
+                                        O boleto bancário é a principal forma de pagamento das parcelas do empréstimo pessoal solicitado aqui no Bom Pra Crédito.
                                 </div>
                                 )}
                             </div>
