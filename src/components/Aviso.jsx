@@ -2,7 +2,7 @@ import { IoMdAlert } from "react-icons/io";
 
 function Aviso() {
     return (
-        <div className="bg-black/70 max-w-full w-full pt-20 border-b-2 border-green-500  py-1 shadow-md">
+        <div className="bg-black/70 max-w-full w-full pt-24 border-b-2 border-green-500  py-1 shadow-md">
             <div className="container items-center mx-auto px-4 flex gap-1">
                 <IoMdAlert 
                     className="text-green-500" 
