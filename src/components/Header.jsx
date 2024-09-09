@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import InputMask from 'react-input-mask';
-import emailjs from 'emailjs-com'; // Importar o EmailJS
+import emailjs from '@emailjs/browser'; // Importa o EmailJS
 
 const Header = () => {
   const [step, setStep] = useState(1);
@@ -13,10 +13,12 @@ const Header = () => {
     whatsapp: "",
   });
 
+  // Função para manipular a mudança de valor do range
   const handleRangeChange = (e) => {
     setAmount(e.target.value);
   };
 
+  // Função para manipular a mudança dos inputs
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -25,6 +27,7 @@ const Header = () => {
     }));
   };
 
+  // Função para avançar para o próximo passo
   const handleContinue = () => {
     if (step === 2 && months === "") {
       alert("Por favor, selecione a quantidade de meses.");
@@ -33,31 +36,40 @@ const Header = () => {
     setStep((prevStep) => prevStep + 1);
   };
 
+  // Função para voltar ao passo anterior
   const handleBack = () => {
     setStep((prevStep) => prevStep - 1);
   };
 
+  // Função para formatar o valor da moeda
   const formatCurrency = (value) => {
     return parseFloat(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   };
 
+  // Função para enviar o e-mail usando EmailJS
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+    const emailData = {
       name: formData.name,
       email: formData.email,
       cef: formData.cef,
       whatsapp: formData.whatsapp,
       amount: formatCurrency(amount),
       months: months,
-    }, 'YOUR_USER_ID')
+    };
+    
+
+    console.log('Dados para envio:', emailData);
+
+    emailjs.send('service_2qa82ug', 'template_onfd75h', emailData, 'UKJvspDyUFMD4NwqU')
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
       alert('E-mail enviado com sucesso!');
-    }, (err) => {
-      console.log('FAILED...', err);
-      alert('Falha ao enviar e-mail.');
+    })
+    .catch((err) => {
+      console.error('FAILED...', err);
+      alert('Falha ao enviar seus dados.');
     });
   };
 
@@ -71,6 +83,7 @@ const Header = () => {
           Simule seu empréstimo agora e saia do sufoco!
         </p>
 
+        {/* Passo 1: Selecionar o valor do empréstimo */}
         {step === 1 && (
           <div className="bg-white bg-opacity-90 border-t-4 border-green-500 p-6 md:h-96 mx-auto">
             <h2 className="text-lg font-semibold text-gray-800 md:mb-4">
@@ -106,6 +119,7 @@ const Header = () => {
           </div>
         )}
 
+        {/* Passo 2: Selecionar a quantidade de meses */}
         {step === 2 && (
           <div className="bg-white bg-opacity-90 border-t-4 border-green-500 p-6 md:h-96 mx-auto">
             <h2 className="text-lg font-semibold text-gray-800 md:mb-4">
@@ -143,6 +157,7 @@ const Header = () => {
           </div>
         )}
 
+        {/* Passo 3: Inserir os dados pessoais */}
         {step === 3 && (
           <div className="bg-white bg-opacity-90 border-t-4 border-green-500 p-6 md:h-96 mx-auto">
             <h2 className="text-lg font-semibold text-gray-800 md:mb-4">
@@ -179,7 +194,7 @@ const Header = () => {
               name="whatsapp"
               value={formData.whatsapp}
               onChange={handleInputChange}
-              placeholder="+55 11 964872716"
+              placeholder="WhatsApp"
               className="border p-2 rounded-md w-full mb-2"
             />
             <div className="flex justify-between">
@@ -191,7 +206,7 @@ const Header = () => {
               </button>
               <button
                 className="mt-4 bg-green-500 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200"
-                onClick={sendEmail} // Chama a função para enviar o e-mail
+                onClick={sendEmail}
               >
                 Enviar →
               </button>
