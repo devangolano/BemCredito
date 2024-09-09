@@ -7,7 +7,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <nav className="py-4 bg-white border-b shadow-md border-gray-200">
+        <nav className="py-4 bg-white fixed z-10 w-full border-b shadow-md border-gray-200">
             <div className="container mx-auto px-4 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex cursor-pointer justify-center pr-32">
