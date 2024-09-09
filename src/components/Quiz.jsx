@@ -19,37 +19,37 @@ const Quiz = () => {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
         {/* Primeiro Item */}
-        <div className="flex items-start space-x-4">
+        <div className="flex items-center space-x-4">
           <img src={IconPartner} alt="Ícone Parceiros" className="w-8 h-8 sm:w-10 sm:h-10" />
           <h3 className="text-base sm:text-lg font-semibold">Temos mais de 50 financeiras parceiras</h3>
         </div>
 
         {/* Segundo Item */}
-        <div className="flex items-start space-x-4">
+        <div className="flex items-center space-x-4">
           <img src={IconFastCredit} alt="Ícone Crédito Rápido" className="w-8 h-8 sm:w-10 sm:h-10" />
           <h3 className="text-base sm:text-lg font-semibold">Crédito rápido na sua conta!</h3>
         </div>
 
         {/* Terceiro Item */}
-        <div className="flex items-start space-x-4">
+        <div className="flex items-center space-x-4">
           <img src={IconLowRate} alt="Ícone Taxas Baixas" className="w-8 h-8 sm:w-10 sm:h-10" />
           <h3 className="text-base sm:text-lg font-semibold">Empréstimos online com taxas a partir de 1,15% ao mês</h3>
         </div>
 
         {/* Quarto Item */}
-        <div className="flex items-start space-x-4">
+        <div className="flex items-center space-x-4">
           <img src={IconQuickOffer} alt="Ícone Ofertas Rápidas" className="w-8 h-8 sm:w-10 sm:h-10" />
           <h3 className="text-base sm:text-lg font-semibold">Ofertas de crédito em 5 minutos</h3>
         </div>
 
         {/* Quinto Item */}
-        <div className="flex items-start space-x-4">
+        <div className="flex items-center space-x-4">
           <img src={IconMillionPeople} alt="Ícone Milhões de Pessoas" className="w-8 h-8 sm:w-10 sm:h-10" />
           <h3 className="text-base sm:text-lg font-semibold">Mais de 11 milhões de pessoas já solicitaram um empréstimo online</h3>
         </div>
 
         {/* Sexto Item */}
-        <div className="flex items-start space-x-4">
+        <div className="flex items-center space-x-4">
           <img src={IconRegulated} alt="Ícone Regulamentação" className="w-8 h-8 sm:w-10 sm:h-10" />
           <h3 className="text-base sm:text-lg font-semibold">Somos regulamentados pelo Banco Central (Bacen) como correspondentes bancários</h3>
         </div>
