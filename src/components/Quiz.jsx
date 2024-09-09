@@ -10,14 +10,14 @@ import IconRegulated from '../assets/icon-banco-central.svg';
 
 const Quiz = () => {
   return (
-    <div className="flex flex-col absolute z-10 md:mt-[1350px] mt-[2080px] w-full px-6 sm:px-12 md:px-24 py-12 items-start justify-center bg-slate-50">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-start sm:text-start mb-4">
+    <div className="flex flex-col absolute z-8 md:mt-[1350px] mt-[2080px] w-full px-6 sm:px-12 md:px-24 py-12 items-start justify-center bg-slate-50">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-start mb-4">
         Por que empréstimo online no #BPC?
       </h2>
       <p className="text-start text-gray-600 mb-8 max-w-md">
         Te ajudamos a concretizar seus objetivos: quitar uma dívida, reformar sua casa, abrir seu negócio ou resolver uma emergência. Como?
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl mx-auto">
         {/* Primeiro Item */}
         <div className="flex items-center space-x-4">
           <img src={IconPartner} alt="Ícone Parceiros" className="w-8 h-8 sm:w-10 sm:h-10" />
