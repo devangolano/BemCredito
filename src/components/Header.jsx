@@ -218,11 +218,11 @@ const Header = () => {
 
       {/* Modal de Agradecimento */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+        <div className="fixed inset-0 px-4 z-20 flex items-center justify-center bg-gray-800 bg-opacity-50">
           <div className="bg-white p-6 rounded-md shadow-lg">
             <h2 className="text-lg font-semibold text-gray-800 mb-4">Obrigado!</h2>
-            <p className="text-gray-700 mb-4">Seu pedido foi enviado com sucesso.</p>
-            <p className="text-gray-700 mb-4">Entraremos em contacto em breve.</p>
+            <p className="text-gray-700 mb-4">Sua solicitação foi enviada com sucesso.</p>
+            <p className="text-gray-700 mb-4">Em breve um de nossos consultores irá entrar em contato.</p>
             <button
               className="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600"
               onClick={() => setShowModal(false)}
