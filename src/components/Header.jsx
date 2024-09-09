@@ -100,16 +100,16 @@ const Header = () => {
             </div>
             <input
               type="range"
-              min="500"
-              max="60000"
-              step="250"
+              min="3000"
+              max="500000"
+              step="1000"
               value={amount}
               onChange={handleRangeChange}
               className="w-full mb-4"
             />
             <div className="flex justify-between text-sm text-gray-600 mb-2">
-              <span>500</span>
-              <span>60.000</span>
+              <span>3.000,00</span>
+              <span>500.000,00</span>
             </div>
             <button
               className="w-[150px] right-6 mt-4 absolute bg-green-500 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200"
