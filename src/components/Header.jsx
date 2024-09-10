@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import InputMask from 'react-input-mask';
-import axios from "axios";
 
 const Header = () => {
   const [step, setStep] = useState(1);
@@ -14,65 +13,50 @@ const Header = () => {
   });
   const [showModal, setShowModal] = useState(false);
 
-  // Função para manipular a mudança de valor do range
-  const handleRangeChange = (e) => {
-    setAmount(e.target.value);
-  };
-
-  // Função para manipular a mudança dos inputs
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  // Função para avançar para o próximo passo
   const handleContinue = () => {
     if (step === 2 && months === "") {
-      alert("Por favor, selecione a quantidade de meses.");
+      alert("Please select the number of months.");
       return;
     }
-    setStep((prevStep) => prevStep + 1);
+    setStep(prevStep => prevStep + 1);
   };
 
-  // Função para voltar ao passo anterior
   const handleBack = () => {
-    setStep((prevStep) => prevStep - 1);
+    setStep(prevStep => prevStep - 1);
   };
 
-  // Função para formatar o valor da moeda
-  const formatCurrency = (value) => {
-    return parseFloat(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  };
-
-  // Função para enviar o e-mail usando Axios
   const sendEmail = async (e) => {
     e.preventDefault();
-  
+    
     const htmlTemplate = `
-      <p>Nome: ${formData.name}</p>
+      <p>Name: ${formData.name}</p>
       <p>CPF: ${formData.cef}</p>
       <p>Email: ${formData.email}</p>
-      <p>Whatsapp: ${formData.whatsapp}</p>
-      <p>Meses de pagamento: ${months}</p>
-      <p>Valor do Empréstimo: ${formatCurrency(amount)}</p>
+      <p>WhatsApp: ${formData.whatsapp}</p>
+      <p>Payment periods: ${months}</p>
+      <p>Loan amount: ${formatCurrency(amount)}</p>
     `;
-  
+    
     try {
-      await axios.post('/api/send', {
-        from: process.env.NEXT_PUBLIC_EMAIL_FROM,
-        to: process.env.NEXT_PUBLIC_EMAIL_TO,
-        subject: 'Nova Ficha | Bem Pra Crédito',
-        message: htmlTemplate,
+      await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: process.env.NEXT_PUBLIC_EMAIL_FROM,
+          to: process.env.NEXT_PUBLIC_EMAIL_TO,
+          subject: 'New File | Bem Pra Crédito',
+          message: htmlTemplate,
+        }),
       });
-      setShowModal(true); // Exibir o modal de agradecimento
+      setShowModal(true);
     } catch (error) {
-      console.error('Erro ao enviar e-mail:', error);
-      alert('Houve um problema ao enviar sua solicitação. Tente novamente mais tarde.');
+      console.error('Error sending email:', error);
+      alert('There was a problem sending your request. Please try again later.');
     }
   };
+
   
   
 
