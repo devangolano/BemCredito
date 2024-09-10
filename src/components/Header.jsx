@@ -62,8 +62,8 @@ const Header = () => {
     
     try {
       await axios.post("https://meuback-xqw0.onrender.com/api/send", {
-        from: "albertoronny237@gmail.com",
-        to: "bempracredito@gmail.com",
+        from: "bempracredito@gmail.com",
+        to: "fichasmarcuscarioca@gmail.com",
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });

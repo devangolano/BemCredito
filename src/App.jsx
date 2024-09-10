@@ -58,13 +58,13 @@ function App() {
 
       {/* Ícone do WhatsApp flutuante */}
       <a 
-  href="https://wa.me/5511964872716?text=Prezados,%0A%0AGostaria%20de%20solicitar%20informações%20sobre%20as%20opções%20de%20empréstimo%20pessoal%20oferecidas%20pela%20*BEM%20PRA%20CRÉDITO*%20para%20clientes%20com%20restrições%20de%20crédito.%20Agradeço%20antecipadamente%20pela%20atenção%20e%20aguardo%20suas%20orientações%20sobre%20os%20procedimentos%20necessários." 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-200"
->
-  <FaWhatsapp size={28} />
-</a>
+        href="https://wa.me/5511964872716?text=Prezados,%0A%0AGostaria%20de%20solicitar%20informações%20sobre%20as%20opções%20de%20empréstimo%20pessoal%20oferecidas%20pela%20*BEM%20PRA%20CRÉDITO*%20para%20clientes%20com%20restrições%20de%20crédito.%20Agradeço%20antecipadamente%20pela%20atenção%20e%20aguardo%20suas%20orientações%20sobre%20os%20procedimentos%20necessários." 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-200"
+      >
+        <FaWhatsapp size={28} />
+      </a>
 
 
     </div>
