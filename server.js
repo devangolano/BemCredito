@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Endpoint para enviar e-mail
-app.post("/api/send", (req, res) => {
+app.post("https://bempracredito.vercel.app/api/send", (req, res) => {
     console.log("Requisição recebida para envio de e-mail.");
 
     const { from, to, subject, message } = req.body;
