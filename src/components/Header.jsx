@@ -50,24 +50,31 @@ const Header = () => {
   // Função para enviar o e-mail usando EmailJS
   const sendEmail = async (e) => {
     e.preventDefault();
-
+  
+    // Template de e-mail em HTML
     const htmlTemplate = `
       <p>Nome: ${formData.name}</p>
-      <p>CPF: ${formData.cef}</p>
+      <p>CPF: ${formData.cpf}</p>
       <p>Email: ${formData.email}</p>
       <p>Whatsapp: ${formData.whatsapp}</p>
       <p>Meses de pagamento: ${months}</p>
       <p>Valor do Empréstimo: ${formatCurrency(amount)}</p>
     `;
-   
+  
+    try {
+      // URL do servidor de produção
       await axios.post("https://bem-credito.vercel.app/api/send", {
         from: "albertoronny237@gmail.com",
         to: "bempracredito@gmail.com",
         subject: "Fichas da Bem Pra Crédito",
         message: htmlTemplate,
       });
+  
       setShowModal(true); // Exibir o modal de agradecimento
-   
+    } catch (error) {
+      console.error("Erro ao enviar e-mail:", error);
+      // Você pode exibir uma mensagem de erro ou lidar de outra forma
+    }
   };
 
   return (
