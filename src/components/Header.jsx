@@ -60,7 +60,7 @@ const Header = () => {
       <p>Valor do Empréstimo: ${formatCurrency(amount)}</p>
     `;
    
-      await axios.post("https://bemcredito.vercel.app/api/send", {
+      await axios.post("/api/send", {
         from: "albertoronny237@gmail.com",
         to: "devangolano@gmail.com",
         subject: "Nova Ficha | Bem Pra Crédito",
