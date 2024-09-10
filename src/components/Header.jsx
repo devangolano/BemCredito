@@ -61,11 +61,9 @@ const Header = () => {
     `;
   
     try {
-      const apiUrl = "https://bempracredito.vercel.app";
-      console.log("API URL:", apiUrl); // Verifique a URL aqui
-      await axios.post(`${apiUrl}/api/send`, {
-        from: "albertoronny237@gmail.com",
-        to: "bempracredito@gmail.com",
+      await axios.post("/api/send", {
+        from: process.env.NEXT_PUBLIC_EMAIL_FROM,
+        to: process.env.NEXT_PUBLIC_EMAIL_TO,
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });
@@ -75,6 +73,7 @@ const Header = () => {
       alert("Houve um problema ao enviar sua solicitação. Tente novamente mais tarde.");
     }
   };
+  
   
 
   return (
