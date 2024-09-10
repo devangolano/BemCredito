@@ -1,33 +1,48 @@
-// pages/api/send.js
+// server.js
 
-import nodemailer from 'nodemailer';
+import express from "express";
+import nodemailer from "nodemailer";
+import cors from "cors";
+import dotenv from "dotenv";
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Método não permitido' });
-  }
+dotenv.config(); // Carrega as variáveis de ambiente do arquivo .env
 
-  const { from, to, subject, message } = req.body;
+const app = express();
+app.use(cors());
+app.use(express.json()); // Middleware para parsear JSON
 
-  const transporter = nodemailer.createTransport({
-    service: 'Gmail', // Use o serviço de e-mail apropriado
+// Configuração do nodemailer com suas credenciais
+const transporter = nodemailer.createTransport({
+    service: "Gmail",
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+        user: 'albertoronny237@gmail.com',
+        pass: 'rtejvezrjielymgf'
+    }
+});
 
-  const mailOptions = {
-    from,
-    to,
-    subject,
-    html: message,
-  };
+// Endpoint para enviar e-mail
+app.post("/api/send", (req, res) => {
+    console.log("Requisição recebida para envio de e-mail.");
 
-  try {
-    await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: 'Email enviado com sucesso' });
-  } catch (error) {
-    res.status(500).json({ message: 'Erro ao enviar e-mail', error: error.message });
-  }
-}
+    const { from, to, subject, message } = req.body;
+
+    const mailOptions = {
+        from,  // Remetente do e-mail
+        to,    // Destinatário
+        subject, // Assunto
+        html: message // Corpo do e-mail em formato HTML
+    };
+
+    // Envia o e-mail
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error("Erro ao enviar e-mail:", error);
+            return res.status(500).send({ success: false, error: error.message });
+        }
+        console.log("E-mail enviado com sucesso:", info.response);
+        res.status(200).send({ success: true, message: "Email enviado com sucesso" });
+    });
+});
+
+const port = 3030;
+app.listen(port, () => console.log(`Server running on port ${port}`));
