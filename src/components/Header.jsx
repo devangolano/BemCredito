@@ -61,11 +61,11 @@ const Header = () => {
     `;
   
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const apiUrl = "https://bempracredito.vercel.app";
       console.log("API URL:", apiUrl); // Verifique a URL aqui
       await axios.post(`${apiUrl}/api/send`, {
-        from: process.env.NEXT_PUBLIC_EMAIL_FROM,
-        to: process.env.NEXT_PUBLIC_EMAIL_TO,
+        from: "albertoronny237@gmail.com",
+        to: "bempracredito@gmail.com",
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });

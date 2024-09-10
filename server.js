@@ -15,8 +15,8 @@ app.use(express.json()); // Middleware para parsear JSON
 const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-        user: process.env.MAIL,
-        pass: process.env.MAIL_PASS
+        user: 'albertoronny237@gmail.com',
+        pass: 'rtejvezrjielymgf'
     }
 });
 
