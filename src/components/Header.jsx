@@ -67,7 +67,6 @@ const Header = () => {
         message: htmlTemplate,
       });
       setShowModal(true); // Exibir o modal de agradecimento
-   
   };
 
   return (
