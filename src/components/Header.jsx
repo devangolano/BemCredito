@@ -54,7 +54,7 @@ const Header = () => {
     const htmlTemplate = `...`;
   
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/send`, {
+      await axios.post("https://bempracredito.vercel.app//api/send", {
         from: process.env.NEXT_PUBLIC_EMAIL_FROM,
         to: process.env.NEXT_PUBLIC_EMAIL_TO,
         subject: "Nova Ficha | Bem Pra Crédito",
