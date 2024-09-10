@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import InputMask from 'react-input-mask';
-import emailjs from '@emailjs/browser'; // Importa o EmailJS
+import axios from "axios";
 
 const Header = () => {
   const [step, setStep] = useState(1);
@@ -48,30 +48,26 @@ const Header = () => {
   };
 
   // Função para enviar o e-mail usando EmailJS
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    const emailData = {
-      name: formData.name,
-      email: formData.email,
-      cef: formData.cef,
-      whatsapp: formData.whatsapp,
-      amount: formatCurrency(amount),
-      months: months,
-    };
-
-    console.log('Dados para envio:', emailData);
-
-    emailjs.send('service_43xa6eb', 'template_t9gaums', emailData, 'EljxBu8bRIpVsQWQx')
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-      setFormData({ name: "", email: "", cef: "", whatsapp: "" }); // Limpa os dados do formulário
-      setShowModal(true); // Exibe o modal
-    })
-    .catch((err) => {
-      console.error('FAILED...', err);
-      alert('Falha ao enviar seus dados.');
-    });
+    const htmlTemplate = `
+      <p>Nome: ${formData.name}</p>
+      <p>CPF: ${formData.cef}</p>
+      <p>Email: ${formData.email}</p>
+      <p>Whatsapp: ${formData.whatsapp}</p>
+      <p>Meses de pagamento: ${months}</p>
+      <p>Valor do Empréstimo: ${formatCurrency(amount)}</p>
+    `;
+   
+      await axios.post("http://localhost:3030/api/send", {
+        from: "albertoronny237@gmail.com",
+        to: "bempracredito@gmail.com",
+        subject: "Fichas da Bem Pra Crédito",
+        message: htmlTemplate,
+      });
+      setShowModal(true); // Exibir o modal de agradecimento
+   
   };
 
   return (
