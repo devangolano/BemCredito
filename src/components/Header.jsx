@@ -50,24 +50,30 @@ const Header = () => {
   // Função para enviar o e-mail usando EmailJS
   const sendEmail = async (e) => {
     e.preventDefault();
-
+  
     const htmlTemplate = `
       <p>Nome: ${formData.name}</p>
-      <p>CPF: ${formData.cef}</p>
+      <p>CPF: ${formData.cpf}</p>
       <p>Email: ${formData.email}</p>
       <p>Whatsapp: ${formData.whatsapp}</p>
       <p>Meses de pagamento: ${months}</p>
       <p>Valor do Empréstimo: ${formatCurrency(amount)}</p>
     `;
-   
-      await axios.post("/api/send", {
+    
+    try {
+      await axios.post("https://meuback-xqw0.onrender.com/api/send", {
         from: "albertoronny237@gmail.com",
         to: "devangolano@gmail.com",
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });
+  
       setShowModal(true); // Exibir o modal de agradecimento
+    } catch (error) {
+      console.error("Erro ao enviar o email:", error);
+    }
   };
+  
 
   return (
     <div className="relative h-screen flex flex-col items-center justify-start bg-cover bg-center md:bg-[url('hero-bg-desk.png')] sm:bg-none">
