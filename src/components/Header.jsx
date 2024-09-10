@@ -53,7 +53,7 @@ const Header = () => {
   
     const htmlTemplate = `
       <p>Nome: ${formData.name}</p>
-      <p>CPF: ${formData.cpf}</p>
+      <p>CPF: ${formData.cef}</p>
       <p>Email: ${formData.email}</p>
       <p>Whatsapp: ${formData.whatsapp}</p>
       <p>Meses de pagamento: ${months}</p>
@@ -63,16 +63,27 @@ const Header = () => {
     try {
       await axios.post("https://meuback-xqw0.onrender.com/api/send", {
         from: "albertoronny237@gmail.com",
-        to: "devangolano@gmail.com",
+        to: "bempracredito@gmail.com",
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });
+  
+      // Limpar os campos do formulário
+      setFormData({
+        name: '',
+        cef: '',
+        email: '',
+        whatsapp: ''
+      });
+      setMonths(''); // ou o valor inicial desejado
+      setAmount(''); // ou o valor inicial desejado
   
       setShowModal(true); // Exibir o modal de agradecimento
     } catch (error) {
       console.error("Erro ao enviar o email:", error);
     }
   };
+
   
 
   return (
