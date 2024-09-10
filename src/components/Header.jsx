@@ -67,6 +67,7 @@ const Header = () => {
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });
+      console.log(process.NEXT_PUBLIC_API_URL)
       setShowModal(true); // Exibir o modal de agradecimento
     } catch (error) {
       console.error("Erro ao enviar e-mail:", error);
