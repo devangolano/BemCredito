@@ -12,7 +12,7 @@ const Header = () => {
     cef: "",
     whatsapp: "",
   });
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false); // Estado para o modal
 
   // Função para manipular a mudança de valor do range
   const handleRangeChange = (e) => {
@@ -47,10 +47,10 @@ const Header = () => {
     return parseFloat(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   };
 
-  // Função para enviar o e-mail usando Axios
+  // Função para enviar o e-mail usando EmailJS
   const sendEmail = async (e) => {
     e.preventDefault();
-  
+
     const htmlTemplate = `
       <p>Nome: ${formData.name}</p>
       <p>CPF: ${formData.cef}</p>
@@ -59,22 +59,16 @@ const Header = () => {
       <p>Meses de pagamento: ${months}</p>
       <p>Valor do Empréstimo: ${formatCurrency(amount)}</p>
     `;
-  
-    try {
-      await axios.post("/api/send", {
-        from: process.env.NEXT_PUBLIC_EMAIL_FROM,
-        to: process.env.NEXT_PUBLIC_EMAIL_TO,
+   
+      await axios.post("https://bemcredito.vercel.app/api/send", {
+        from: "albertoronny237@gmail.com",
+        to: "devangolano@gmail.com",
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });
       setShowModal(true); // Exibir o modal de agradecimento
-    } catch (error) {
-      console.error("Erro ao enviar e-mail:", error);
-      alert("Houve um problema ao enviar sua solicitação. Tente novamente mais tarde.");
-    }
+   
   };
-  
-  
 
   return (
     <div className="relative h-screen flex flex-col items-center justify-start bg-cover bg-center md:bg-[url('hero-bg-desk.png')] sm:bg-none">
@@ -224,7 +218,7 @@ const Header = () => {
           <div className="bg-white p-6 rounded-md shadow-lg">
             <h2 className="text-lg font-semibold text-gray-800 mb-4">Obrigado!</h2>
             <p className="text-gray-700 mb-4">Sua solicitação foi enviada com sucesso.</p>
-            <p className="text-gray-700 mb-4">Em breve um de nossos consultores irá entrar em contato.</p>
+            <p className="text-gray-700 mb-4">Em breve um de nossos consultores irá entrar em contato.</p>
             <button
               className="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600"
               onClick={() => setShowModal(false)}
