@@ -61,16 +61,16 @@ const Header = () => {
     `;
   
     try {
-      await axios.post("/api/send", {
+      await axios.post('/api/send', {
         from: process.env.NEXT_PUBLIC_EMAIL_FROM,
         to: process.env.NEXT_PUBLIC_EMAIL_TO,
-        subject: "Nova Ficha | Bem Pra Crédito",
+        subject: 'Nova Ficha | Bem Pra Crédito',
         message: htmlTemplate,
       });
       setShowModal(true); // Exibir o modal de agradecimento
     } catch (error) {
-      console.error("Erro ao enviar e-mail:", error);
-      alert("Houve um problema ao enviar sua solicitação. Tente novamente mais tarde.");
+      console.error('Erro ao enviar e-mail:', error);
+      alert('Houve um problema ao enviar sua solicitação. Tente novamente mais tarde.');
     }
   };
   

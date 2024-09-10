@@ -1,3 +1,5 @@
+// pages/api/send.js
+
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
@@ -8,10 +10,10 @@ export default async function handler(req, res) {
   const { from, to, subject, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'Gmail', // Use o serviço de e-mail apropriado
     auth: {
-      user: process.env.NEXT_PUBLIC_EMAIL_FROM,
-      pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
