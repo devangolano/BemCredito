@@ -50,30 +50,22 @@ const Header = () => {
   // Função para enviar o e-mail usando Axios
   const sendEmail = async (e) => {
     e.preventDefault();
-
-    const htmlTemplate = `
-      <p>Nome: ${formData.name}</p>
-      <p>CPF: ${formData.cef}</p>
-      <p>Email: ${formData.email}</p>
-      <p>Whatsapp: ${formData.whatsapp}</p>
-      <p>Meses de pagamento: ${months}</p>
-      <p>Valor do Empréstimo: ${formatCurrency(amount)}</p>
-    `;
-
+  
+    const htmlTemplate = `...`;
+  
     try {
-      await axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/send", {
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/send`, {
         from: process.env.NEXT_PUBLIC_EMAIL_FROM,
         to: process.env.NEXT_PUBLIC_EMAIL_TO,
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });
-      console.log(process.NEXT_PUBLIC_API_URL)
       setShowModal(true); // Exibir o modal de agradecimento
     } catch (error) {
       console.error("Erro ao enviar e-mail:", error);
-      alert("Houve um problema ao enviar sua solicitação. Tente novamente mais tarde.");
     }
   };
+  
 
   return (
     <div className="relative h-screen flex flex-col items-center justify-start bg-cover bg-center md:bg-[url('hero-bg-desk.png')] sm:bg-none">
