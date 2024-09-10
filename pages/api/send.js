@@ -1,18 +1,16 @@
+// pages/api/send.js
+
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ message: 'Método não permitido' });
   }
 
   const { from, to, subject, message } = req.body;
 
-  if (!from || !to || !subject || !message) {
-    return res.status(400).json({ message: 'Missing required fields' });
-  }
-
   const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'Gmail', // Use o serviço de e-mail apropriado
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -28,9 +26,8 @@ export default async function handler(req, res) {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: 'Email sent successfully' });
+    res.status(200).json({ message: 'Email enviado com sucesso' });
   } catch (error) {
-    console.error('Error sending email:', error);
-    return res.status(500).json({ message: 'Error sending email', error: error.message });
+    res.status(500).json({ message: 'Erro ao enviar e-mail', error: error.message });
   }
 }
