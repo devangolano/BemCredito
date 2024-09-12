@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import InputMask from 'react-input-mask';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom'; // Importando o hook useNavigate
 
 const Header = () => {
+  const navigate = useNavigate(); // Hook para navegar entre páginas
   const [step, setStep] = useState(1);
   const [amount, setAmount] = useState(3000);
   const [months, setMonths] = useState("");
@@ -12,14 +14,39 @@ const Header = () => {
     cef: "",
     whatsapp: "",
   });
-  const [showModal, setShowModal] = useState(false); // Estado para o modal
+  const [showModal, setShowModal] = useState(false);
 
-  // Função para manipular a mudança de valor do range
+  const validateCPF = (cpf) => {
+    cpf = cpf.replace(/[^\d]+/g, ""); // Remove caracteres não numéricos
+    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false; // Verifica se tem 11 dígitos e se não é uma sequência repetida
+
+    let soma = 0;
+    let resto;
+
+    // Validação do primeiro dígito verificador
+    for (let i = 1; i <= 9; i++) {
+      soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.substring(9, 10))) return false;
+
+    // Validação do segundo dígito verificador
+    soma = 0;
+    for (let i = 1; i <= 10; i++) {
+      soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.substring(10, 11))) return false;
+
+    return true;
+  };
+
   const handleRangeChange = (e) => {
     setAmount(e.target.value);
   };
 
-  // Função para manipular a mudança dos inputs
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -28,7 +55,6 @@ const Header = () => {
     }));
   };
 
-  // Função para avançar para o próximo passo
   const handleContinue = () => {
     if (step === 2 && months === "") {
       alert("Por favor, selecione a quantidade de meses.");
@@ -37,20 +63,27 @@ const Header = () => {
     setStep((prevStep) => prevStep + 1);
   };
 
-  // Função para voltar ao passo anterior
   const handleBack = () => {
     setStep((prevStep) => prevStep - 1);
   };
 
-  // Função para formatar o valor da moeda
   const formatCurrency = (value) => {
     return parseFloat(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   };
 
-  // Função para enviar o e-mail usando EmailJS
   const sendEmail = async (e) => {
     e.preventDefault();
-  
+
+    if (!formData.name || !formData.cef || !formData.email || !formData.whatsapp || !months) {
+      alert("Por favor, preencha todos os campos...");
+      return;
+    }
+
+    if (!validateCPF(formData.cef)) {
+      alert("Por favor, insira um CPF válido.");
+      return;
+    }
+
     const htmlTemplate = `
       <p>Nome: ${formData.name}</p>
       <p>CPF: ${formData.cef}</p>
@@ -59,7 +92,7 @@ const Header = () => {
       <p>Meses de pagamento: ${months}</p>
       <p>Valor do Empréstimo: ${formatCurrency(amount)}</p>
     `;
-    
+
     try {
       await axios.post("https://meuback-xqw0.onrender.com/api/send", {
         from: "bempracredito@gmail.com",
@@ -67,24 +100,26 @@ const Header = () => {
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });
-  
-      // Limpar os campos do formulário
+
       setFormData({
         name: '',
         cef: '',
         email: '',
         whatsapp: ''
       });
-      setMonths(''); // ou o valor inicial desejado
-      setAmount(''); // ou o valor inicial desejado
-  
-      setShowModal(true); // Exibir o modal de agradecimento
+      setMonths('');
+      setAmount('');
+
+      setShowModal(true);
+
+      setTimeout(() => {
+        setShowModal(false); // Fechar o modal
+        navigate('/'); // Redirecionar para a página inicial
+      }, 3000); // Tempo de exibição do modal antes de redirecionar
     } catch (error) {
       console.error("Erro ao enviar o email:", error);
     }
   };
-
-  
 
   return (
     <div className="relative h-screen flex flex-col items-center justify-start bg-cover bg-center md:bg-[url('hero-bg-desk.png')] sm:bg-none">
