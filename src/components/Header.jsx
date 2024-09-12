@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'; // Importando o hook useNavigate
 const Header = () => {
   const navigate = useNavigate(); // Hook para navegar entre páginas
   const [step, setStep] = useState(1);
-  const [amount, setAmount] = useState(3000);
+  const [amount, setAmount] = useState(5000);
   const [months, setMonths] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -147,7 +147,7 @@ const Header = () => {
             </div>
             <input
               type="range"
-              min="3000"
+              min="5000"
               max="500000"
               step="1000"
               value={amount}
@@ -155,7 +155,7 @@ const Header = () => {
               className="w-full mb-4"
             />
             <div className="flex justify-between text-sm text-gray-600 mb-2">
-              <span>3.000,00</span>
+              <span>5.000,00</span>
               <span>500.000,00</span>
             </div>
             <button
