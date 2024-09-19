@@ -74,6 +74,16 @@ const Header = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
 
+    // Verifica se já passou o tempo de 10 minutos desde o último envio
+    const lastSubmitTime = localStorage.getItem('lastSubmitTime');
+    const now = Date.now();
+
+    if (lastSubmitTime && now - lastSubmitTime < 10 * 60 * 1000) {
+      const minutesLeft = Math.ceil((10 * 60 * 1000 - (now - lastSubmitTime)) / 60000);
+      alert(`Você precisa esperar ${minutesLeft} minutos antes de reenviar o formulário.`);
+      return;
+    }
+
     if (!formData.name || !formData.cef || !formData.email || !formData.whatsapp || !months) {
       alert("Por favor, preencha todos os campos...");
       return;
@@ -94,7 +104,6 @@ const Header = () => {
     `;
 
     try {
-      //https://meuback-xqw0.onrender.com/api/send
       await axios.post("https://meuback-xqw0.onrender.com/api/send", {
         from: "bempracredito@gmail.com",
         to: "fichasmarcuscarioca@gmail.com",
@@ -102,6 +111,7 @@ const Header = () => {
         message: htmlTemplate,
       });
 
+      // Reseta os dados do formulário
       setFormData({
         name: '',
         cef: '',
@@ -112,6 +122,9 @@ const Header = () => {
       setAmount('');
 
       setShowModal(true);
+
+      // Salva o timestamp do envio no localStorage
+      localStorage.setItem('lastSubmitTime', Date.now());
 
       setTimeout(() => {
         setShowModal(false); // Fechar o modal
@@ -206,45 +219,45 @@ const Header = () => {
           </div>
         )}
 
-        {/* Passo 3: Inserir os dados pessoais */}
+        {/* Passo 3: Formulário de Dados Pessoais */}
         {step === 3 && (
-          <div className="bg-white bg-opacity-90 border-t-4 border-green-500 p-6 md:h-96 mx-auto">
+          <form className="bg-white bg-opacity-90 border-t-4 border-green-500 p-6 md:h-96 mx-auto">
             <h2 className="text-lg font-semibold text-gray-800 md:mb-4">
-              Insira seus dados:
+              Preencha seus dados:
             </h2>
             <input
               type="text"
               name="name"
+              placeholder="Nome Completo"
+              className="border p-2 rounded-md w-full mb-4"
               value={formData.name}
               onChange={handleInputChange}
-              placeholder="Nome"
-              className="border p-2 rounded-md w-full mb-2"
             />
             <InputMask
               mask="999.999.999-99"
               type="text"
               name="cef"
+              placeholder="CPF"
+              className="border p-2 rounded-md w-full mb-4"
               value={formData.cef}
               onChange={handleInputChange}
-              placeholder="CPF"
-              className="border p-2 rounded-md w-full mb-2"
             />
             <input
               type="email"
               name="email"
+              placeholder="Email"
+              className="border p-2 rounded-md w-full mb-4"
               value={formData.email}
               onChange={handleInputChange}
-              placeholder="Email"
-              className="border p-2 rounded-md w-full mb-2"
             />
             <InputMask
               mask="(99) 99999-9999"
               type="text"
               name="whatsapp"
+              placeholder="Whatsapp"
+              className="border p-2 rounded-md w-full mb-4"
               value={formData.whatsapp}
               onChange={handleInputChange}
-              placeholder="WhatsApp"
-              className="border p-2 rounded-md w-full mb-2"
             />
             <div className="flex justify-between">
               <button
@@ -257,26 +270,18 @@ const Header = () => {
                 className="mt-4 bg-green-500 font-mono text-gray-600 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200"
                 onClick={sendEmail}
               >
-                Enviar →
+                Enviar
               </button>
             </div>
-          </div>
+          </form>
         )}
       </div>
 
-      {/* Modal de Agradecimento */}
       {showModal && (
-        <div className="fixed inset-0 px-4 z-20 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white p-6 rounded-md shadow-lg">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">Obrigado!</h2>
-            <p className="text-gray-700 mb-4">Sua solicitação foi enviada com sucesso.</p>
-            <p className="text-gray-700 mb-4">Em breve um de nossos consultores irá entrar em contato.</p>
-            <button
-              className="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600"
-              onClick={() => setShowModal(false)}
-            >
-              Fechar
-            </button>
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg">
+            <h2 className="text-lg font-semibold mb-4">Ficha enviada com sucesso!</h2>
+            <p className="text-sm">Redirecionando para a página inicial...</p>
           </div>
         </div>
       )}
