@@ -285,8 +285,8 @@ const Header = () => {
         {showModal && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white p-6 rounded-lg">
-              <h2 className="text-lg font-semibold mb-4">Ficha enviada com sucesso!</h2>
-              <p className="text-sm">Redirecionando para a página de empréstimo...</p>
+              <h2 className="text-lg font-semibold mb-4">Sua solicitação foi enviada com sucesso!</h2>
+              <p className="text-sm">Em breve um de nossos consultores irá entrar em contato.</p>
             </div>
           </div>
         )}
