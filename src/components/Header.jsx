@@ -154,13 +154,16 @@ const Header = () => {
   };
 
   return (
-    <div className="relative h-screen flex flex-col items-center justify-start bg-cover bg-center md:bg-[url('hero-bg-desk.png')] sm:bg-none">
-      <div className="absolute md:bottom-0 left-4 md:left-28 max-w-xl w-[95%] sm:w-[80%] md:w-[70%] lg:w-[60%] md:mt-8 text-gray-900 py-2 md:p-0">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-start">
-          Empréstimo Pessoal <br /> Rápido e Seguro
+    <div className="relative h-screen flex flex-col items-center justify-start bg-cover bg-center md:bg-[url('https://img.freepik.com/fotos-premium/fundo-de-natal-com-arvore-de-natal-e-luzes-bokeh-brilhantes-no-fundo-da-tela-vermelha_773922-957.jpg')] sm:bg-none">
+      <div className="absolute md:bottom-0 right-4 md:right-28 max-w-xl w-[95%] sm:w-[80%] md:w-[70%] lg:w-[60%] md:mt-8 py-2 md:p-0">
+        <h1 className="text-3xl md:text-white sm:text-4xl md:text-5xl font-bold mb-2 text-center md:text-start">
+          Realize seus planos e celebre um Natal cheio de vantagens!
         </h1>
-        <p className="text-sm sm:text-base mb-2 md:text-lg md:mb-6">
-          Simule seu empréstimo agora e saia do sufoco!
+        <p className="text-sm font-mono px-3 md:text-white  sm:text-base mb-2 md:text-lg md:mb-6">
+          Transforme seu contrato em presentes! Neste mês de dezembro: Assine
+          contratos a partir de
+          <span className="font-semibold"> R$ 2.500,00</span> e{" "}
+          <span className="font-semibold">ganhe Cupons Vale Presente</span>
         </p>
 
         {step === 1 && (
