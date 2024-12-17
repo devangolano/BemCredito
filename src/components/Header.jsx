@@ -142,10 +142,7 @@ const Header = () => {
 
       localStorage.setItem("lastSubmitTime", Date.now());
 
-      setTimeout(() => {
-        setShowModal(false);
-        window.location.href = "https://bemcredito.vercel.app/";
-      }, 1000);
+      navigate("/obrigado");
     } catch (error) {
       console.error("Erro ao enviar o email:", error);
     } finally {
@@ -156,7 +153,7 @@ const Header = () => {
   return (
     <div className="relative h-screen flex flex-col items-center justify-start bg-cover bg-center md:bg-[url('https://img.freepik.com/fotos-premium/fundo-de-natal-com-arvore-de-natal-e-luzes-bokeh-brilhantes-no-fundo-da-tela-vermelha_773922-957.jpg')] sm:bg-none">
       <div className="absolute md:bottom-0 right-4 md:right-28 max-w-xl w-[95%] sm:w-[80%] md:w-[70%] lg:w-[60%] md:mt-8 py-2 md:p-0">
-        <h1 className="text-3xl md:text-white sm:text-4xl md:text-5xl font-bold mb-2 text-center md:text-start">
+        <h1 className="text-3xl md:text-white sm:text-4xl md:text-5xl font-bold mb-2 text-ce md:text-start">
           Realize seus planos e celebre um Natal cheio de vantagens!
         </h1>
         <p className="text-sm font-mono px-3 md:text-white  sm:text-base mb-2 md:text-lg md:mb-6">
