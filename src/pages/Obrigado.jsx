@@ -29,10 +29,12 @@ const ThankYou = () => {
             </div>
 
             <button
-              onClick={() => (window.location.href = "/")}
+              onClick={() =>
+                (window.location.href = "https://wa.me/551151785087")
+              }
               className="mt-8 bg-green-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-green-600 transition duration-200 inline-flex items-center gap-2"
             >
-              Voltar ao início
+              Fale conosco
             </button>
           </div>
         </div>
