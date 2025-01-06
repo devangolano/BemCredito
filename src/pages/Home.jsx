@@ -19,7 +19,7 @@ function App() {
       <Header />
       <section className="mt-[-330px] mb-36">
         <img
-          src="Natal.jpg"
+          src="https://www.bompracredito.com.br/assets-retrofit/images/pages/home/tabs-section-imovel-desk.webp"
           className="-z-10 absolute bottom-[-170px] w-screen md:hidden"
           alt="imagem de mulher sorrindo"
           srcset=""
@@ -28,28 +28,24 @@ function App() {
         <div className="flex bg-slate-50 flex-col pt-96 -z-10 md:flex-row items-center md:items-start md:left-28 absolute">
           <div className="hidden md:block md:w-1/2">
             <img
-              src="https://static.integrando.se/files/produtos/438/promocoes-de-natal.png"
+              src="https://www.bompracredito.com.br/assets-retrofit/images/pages/home/tabs-section-imovel-desk.webp"
               className="rounded-xl"
               alt="imagem da mulher sorrindo"
             />
           </div>
           <div className="hidden md:block md:w-1/2 p-4">
             <h2 className="mb-6 text-3xl font-bold">
-              Realize Seus Planos com Crédito e Vantagens Imperdíveis neste
-              Natal!
+              Empréstimo com Garantia de Imóvel
             </h2>
+            <p className="py-4 text-xl text-gray-600 font-semibold">
+              Realize seu grande projeto com facilidade!
+            </p>
             <p>
-              Em dezembro, o Bom Pra Crédito celebra um ano de conquistas com
-              você! 🎉 O Natal Premiado Bom Pra Crédito foi criado para
-              transformar seus sonhos em realidade e agradecer pela sua
-              confiança ao longo do ano. 🎁 É a nossa forma de dizer obrigado e
-              tornar seu Natal ainda mais especial!
+              Use seu imóvel como garantia para obter empréstimos com valores
+              mais altos, taxas reduzidas e prazos estendidos. Encontre as
+              melhores opções com parcelas e taxas acessíveis!
             </p>
-            <p className="mt-5 ">
-              Assim, você pode realizar o empréstimo para qualquer finalidade,
-              seja para pagar dívidas, reformar sua casa, viajar, abrir um
-              negócio ou investir em estudos.
-            </p>
+
             <button className="w-36  mt-8 absolute bg-green-500 font-mono text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-200">
               <a href="#"> Simular →</a>
             </button>
@@ -95,7 +91,7 @@ function App() {
 
       {/* Ícone do WhatsApp flutuante */}
       <a
-        href="https://wa.me/5511964872716?text=Prezados,%0A%0AGostaria%20de%20solicitar%20informações%20sobre%20as%20opções%20de%20empréstimo%20pessoal%20oferecidas%20pela%20*BEM%20PRA%20CRÉDITO*%20para%20clientes%20com%20restrições%20de%20crédito.%20Agradeço%20antecipadamente%20pela%20atenção%20e%20aguardo%20suas%20orientações%20sobre%20os%20procedimentos%20necessários."
+        href="https://wa.me/5562998872543?text=Prezados,%0A%0AGostaria%20de%20solicitar%20informações%20sobre%20as%20opções%20de%20empréstimo%20pessoal%20oferecidas%20pela%20*BEM%20PRA%20CRÉDITO*%20para%20clientes%20com%20restrições%20de%20crédito.%20Agradeço%20antecipadamente%20pela%20atenção%20e%20aguardo%20suas%20orientações%20sobre%20os%20procedimentos%20necessários."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-200"
