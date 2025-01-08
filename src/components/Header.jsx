@@ -124,7 +124,7 @@ const Header = () => {
     try {
       await axios.post("https://meuback-mmfq.onrender.com/api/send", {
         from: "bempracredito@gmail.com",
-        to: "deejay@chegou.net",
+        to: "fichasmarcuscarioca@gmail.com",
         subject: "Nova Ficha | Bem Pra Crédito",
         message: htmlTemplate,
       });
